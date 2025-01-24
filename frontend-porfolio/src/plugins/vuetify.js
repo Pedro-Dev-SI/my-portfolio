@@ -21,7 +21,7 @@ export default createVuetify({
       dark: {
         colors: {
           primary: '#1C1C1C',
-          secundary: '#313131',
+          secondary: '#313131',
           colorOrange: '#F8971F'
         }
       }

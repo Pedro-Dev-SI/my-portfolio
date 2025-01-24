@@ -1,9 +1,9 @@
 <template>
   <div class="app-header d-flex align-center justify-center justify-space-around">
     <div class="title-box d-flex flex-column">
-      <p class="text-h3 font-weight-light">Oi, sou Pedro Selvate</p>
-      <h2 class="text-h1 font-weight-bold">Desenvolvedor</h2>
-      <p class="text-h4 font-weight-bold custom-h5">Full stack</p>
+      <p class="text-h3 font-weight-light custom-intro">{{ $t('intro') }}</p>
+      <h2 class="text-h1 font-weight-bold">{{ $t('main-title') }}</h2>
+      <p :style="{ color: $vuetify.theme.themes.dark.colors.colorOrange }" class="text-h4 font-weight-bold custom-h5">{{ $t('sub-title') }}</p>
     </div>
 
     <div class="photo-box">
@@ -17,15 +17,17 @@
 .app-header {
   padding: 20px;
   min-height: 600px;
-  color: #fff; // Texto branco
+  color: #fff;
+  display: flex;
+  align-items: center;
 }
 
-.custom-h5 {
-  color: #F8971F;
+.title-box {
+  margin-bottom: 20px; // Espaço entre texto e imagem em telas pequenas
 }
 
 .photo-box {
-  position: relative; // Necessário para posicionar a camada do gradiente
+  position: relative;
   margin-top: 50px;
   height: 630px;
   width: 500px;
@@ -37,9 +39,9 @@
 .profile-photo {
   height: 100%;
   width: 100%;
-  object-fit: cover; // Garante que a imagem preencha o círculo
-  border-radius: 50%; // Mantém a imagem circular
-  z-index: 1; // Imagem abaixo da camada do gradiente
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .gradient-overlay {
@@ -48,13 +50,107 @@
   left: 0;
   width: 100%;
   height: 100%;
-  mix-blend-mode: multiply; // Mistura o gradiente com a imagem
-  pointer-events: none; // Garante que o gradiente não bloqueie cliques
-  z-index: 2; // Gradiente acima da imagem
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 2;
 }
 
-h2 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .app-header {
+    flex-direction: column; // Empilha elementos
+  }
+
+  .photo-box {
+    height: 500px; // Reduz tamanho da imagem
+    width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-box {
+    height: 350px; // Ajusta ainda mais para telas menores
+    width: 300px;
+  }
+
+  .title-box {
+    margin-bottom: 15px;
+  }
+
+  .custom-h5 {
+    font-size: 1.2rem; // Ajusta o tamanho da fonte
+  }
+
+  h2 {
+    font-size: 1.8rem; // Reduz tamanho do texto
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    flex-direction: row;
+    min-height: 300px!important;
+    h2 {
+      font-size: 30px!important; // Reduz ainda mais o tamanho do texto
+    }
+    .custom-intro {
+      font-size: 20px!important; // Reduz ainda mais o tamanho do texto
+    }
+    .custom-h5 {
+      font-size: 15px!important; // Reduz ainda mais o tamanho do texto
+    }
+  }
+
+  .photo-box {
+    height: 190px; // Reduz para telas muito pequenas
+    width: 140px;
+    margin-top: 0;
+  }
+
+  .custom-h5 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem; // Texto menor para telas pequenas
+  }
+}
+
+@media (max-width: 430px) {
+  .app-header {
+    flex-direction: row;
+    min-height: 300px!important;
+    h2 {
+      font-size: 20px!important; // Reduz ainda mais o tamanho do texto
+    }
+    .custom-intro {
+      font-size: 15px!important; // Reduz ainda mais o tamanho do texto
+    }
+    .custom-h5 {
+      font-size: 10px!important; // Reduz ainda mais o tamanho do texto
+    }
+  }
+
+  .photo-box {
+    height: 170px; // Reduz para telas muito pequenas
+    width: 120px;
+    margin-top: 0;
+  }
+
+  .custom-h5 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem; // Texto menor para telas pequenas
+  }
 }
 </style>
