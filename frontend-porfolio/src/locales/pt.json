@@ -8,6 +8,19 @@
     "about-subtitle": "Sou um Desenvolvedor Full Stack em Minas Gerais, Brasil",
     "about-description": "Sou apaixonado por tecnologia e motivado a criar soluções que fazem a diferença. Formado em Sistemas de Informação aos 22 anos, já tive a oportunidade de trabalhar em projetos desafiadores, incluindo iniciativas voltadas para geotecnologia e desenvolvimento de sistemas para grandes empresas.",
     "about-description-second": "Com ambição de crescer profissionalmente e explorar o mercado internacional, busco sempre aprender e inovar. Além do meu amor pelo desenvolvimento, sou entusiasta da vida esportiva e um grande admirador da aviação. Fácil de fazer amizades, valorizo tanto os momentos de descontração com amigos quanto a dedicação ao trabalho.",
-    "download-cv": "Download currículo"
+    "download-cv": "Download currículo",
+    "technologies": "TECNOLOGIAS",
+    "professional-experience": "EXPERIÊNCIA PROFISSIONAL",
+    "full-stack-developer": "Desenvolvedor Full Stack Pleno",
+    "it-analyst": "Analista de TI",
+    "it-share-description": "Experiência em suporte ao cliente, solucionando problemas e garantindo satisfação via telefone, e-mail e chat. Implementação de DocuSign CLM e assinaturas eletrônicas, incluindo configuração, integração e treinamento de usuários. Condução de treinamentos presenciais e virtuais para usuários e administradores em funcionalidades e manutenção de sistemas.",
+    "youx-description": "Desenvolvimento de software com foco em geoprocessamento no setor florestal e agrícola, incluindo APIs REST e aplicativos móveis com geolocalização. Suporte técnico ao cliente e colaboração no aprimoramento de aplicações. Implementação de pipelines CI/CD para automatizar testes, builds e implantações, integrando com plataformas de nuvem.",
+    "educational": "FORMAÇÃO ACADÊMICA",
+    "institution-header": "Instituição",
+    "course-header": "Curso",
+    "period-header": "Período",
+    "institution": "Faculdade Presbiteriana Gammon",
+    "course": "Bacharel em Sistemas de Informação",
+    "period": "2020 - 2023"
 }
   

@@ -1,22 +1,36 @@
 <template>
   <div class="app-header d-flex align-center justify-center justify-space-around">
-    <div class="title-box d-flex flex-column">
-      <p class="text-h3 font-weight-light custom-intro">{{ $t('intro') }}</p>
+    <!-- Animação para a title-box -->
+    <div class="title-box d-flex flex-column animated-title">
+      <p class="text-h3 font-weight-light custom-intro">
+        {{ $t('intro') }}
+      </p>
       <h2 class="text-h1 font-weight-bold">{{ $t('main-title') }}</h2>
-      <p :style="{ color: $vuetify.theme.themes.dark.colors.colorOrange }" class="text-h4 font-weight-bold custom-h5">{{ $t('sub-title') }}</p>
+      <p
+        :style="{ color: $vuetify.theme.themes.dark.colors.colorOrange }"
+        class="text-h4 font-weight-bold custom-h5"
+      >
+        {{ $t('sub-title') }}
+      </p>
     </div>
 
-    <div class="photo-box">
-      <img src="../assets/profile.png" alt="Foto Pedro" class="profile-photo" />
+    <!-- Animação para a photo-box -->
+    <div class="photo-box animated-photo">
+      <img
+        src="../assets/profile.png"
+        alt="Foto Pedro"
+        class="profile-photo"
+      />
       <div class="gradient-overlay"></div>
     </div>
   </div>
 </template>
 
+
 <style lang="scss">
 .app-header {
   padding: 20px;
-  min-height: 600px;
+  min-height: 100vh;
   color: #fff;
   display: flex;
   align-items: center;
@@ -29,8 +43,8 @@
 .photo-box {
   position: relative;
   margin-top: 50px;
-  height: 630px;
-  width: 500px;
+  height: 730px;
+  width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +68,38 @@
   pointer-events: none;
   z-index: 2;
 }
+
+/* Animação */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated-title {
+  animation: slideInLeft 1s ease-out;
+}
+
+.animated-photo {
+  animation: slideInRight 1s ease-out;
+}
+
 
 /* Estilos responsivos */
 @media (max-width: 1024px) {

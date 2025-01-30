@@ -11,6 +11,8 @@
 
     <!-- Conteúdo Principal -->
     <AboutSection />
+    <ExperienceSection />
+    <AcademicSection />
   </div>
 </template>
 

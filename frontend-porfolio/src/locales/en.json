@@ -8,6 +8,19 @@
   "about-subtitle": "I'm a Full Stack Developer in Minas Gerais, Brazil",
   "about-description": "I am passionate about technology and driven to create solutions that make a difference. Graduating in Information Systems at the age of 22, I have had the opportunity to work on challenging projects, including initiatives in geotechnology and systems development for large companies.",
   "about-description-second": "With a strong ambition to grow professionally and explore the international market, I am always eager to learn and innovate. Beyond my love for development, I am an enthusiast of an active lifestyle and a great admirer of aviation. Easygoing and friendly, I value both moments of relaxation with friends and dedication to my work.",
-  "download-cv": "Download CV"
+  "download-cv": "Download CV",
+  "technologies": "TECHNOLOGIES",
+  "professional-experience": "PROFESSIONAL EXPERIENCE",
+  "full-stack-developer": " Middle Full Stack Developer",
+  "it-analyst": "IT Analyst",
+  "it-share-description": "Experience in customer support, resolving issues and ensuring satisfaction via phone, email, and chat. Implementation of DocuSign CLM and eSignatures, including configuration, integration, and user training. Conducted in-person and virtual training sessions for users and administrators on system features and maintenance.",
+  "youx-description": "Software development focused on geoprocessing in forestry and agriculture, including REST APIs and mobile apps with geolocation. Provided technical support and collaborated on application improvements. Implemented CI/CD pipelines to automate testing, builds, and deployments, integrating with cloud platforms.",
+  "educational": "EDUCATIONAL BACKGROUND",
+  "institution-header": "Institution",
+  "course-header": "Course",
+  "period-header": "Period",
+  "institution": "Gammon Presbyterian College",
+  "course": "Bachelor of Information Systems",
+  "period": "2020 - 2023"
 }
   
