@@ -6,7 +6,7 @@
           {{ $t('technologies') }}
         </p>
 
-        <div class="icons-box d-flex align-center justify-space-between">
+        <div class="icons-box d-flex align-center justify-space-between" ref="iconsBox" :class="{ 'animate-icons-box': iconsBoxVisible }">
           <div class="tech-icon text-body-1">
             <img src="../assets/icons/HTML5.svg" alt="Teste" width="90" height="90">
             <p>HTML5</p>
@@ -75,9 +75,11 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
+      iconsBoxVisible: false,
       rawJobs: [
         {
           company: 'YouX Group',
@@ -85,7 +87,7 @@ export default {
           descriptionKey: 'youx-description',
           startDate: '02/2022',
           endDate: '',
-          logoCompany: 'src/assets/youx-logo.jpeg',
+          logoCompany: '/assets/youx-logo.jpeg',
           isFinished: false
         },
         {
@@ -94,7 +96,7 @@ export default {
           descriptionKey: 'it-share-description',
           startDate: '05/2021',
           endDate: '02/2022',
-          logoCompany: 'src/assets/itshare-logo.jpeg',
+          logoCompany: '/assets/itshare-logo.jpeg',
           isFinished: true
         }
       ]
@@ -109,6 +111,18 @@ export default {
       }));
     }
   },
+  mounted() {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.iconsBoxVisible = true;
+        }
+      },
+      { threshold: 0.1 } // Ativa quando 10% da div é visível
+    );
+
+    observer.observe(this.$refs.iconsBox);
+  }
 }
 </script>
 
@@ -126,6 +140,14 @@ export default {
       .icons-box {
         margin-top: 40px;
         gap: 50px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+
+        &.animate-icons-box {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
         .tech-icon {
           display: flex;

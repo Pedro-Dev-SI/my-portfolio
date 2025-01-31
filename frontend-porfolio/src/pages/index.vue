@@ -13,6 +13,7 @@
     <AboutSection />
     <ExperienceSection />
     <AcademicSection />
+    <ContactSection />
   </div>
 </template>
 

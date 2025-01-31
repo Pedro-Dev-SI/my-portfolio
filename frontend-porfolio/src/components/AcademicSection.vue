@@ -4,7 +4,11 @@
       <p class="text-h4 font-weight-light">
         {{ $t('educational') }}
       </p>
-      <div class="infos d-flex align-center justify-space-around">
+      <div
+        class="infos d-flex align-center justify-space-around"
+        ref="infos"
+        :class="{ 'animate-infos': infosVisible }"
+      >
         <div class="institution-box">
           <p class="text-h5 font-weight-light">{{ $t('institution-header') }}</p>
           <p class="font-weight-bold">{{ $t('institution') }}</p>
@@ -22,10 +26,27 @@
   </section>
 </template>
 
+
 <script>
 export default {
+  data() {
+    return {
+      infosVisible: false,
+    };
+  },
+  mounted() {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.infosVisible = true;
+        }
+      },
+      { threshold: 0.1 } // Ativa quando 10% da div é visível
+    );
 
-}
+    observer.observe(this.$refs.infos);
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -42,6 +63,14 @@ export default {
     .infos {
       width: 100%;
       margin-top: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+
+      &.animate-infos {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
       .institution-box, .course-box, .date-box {
         width: 30%;
