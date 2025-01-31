@@ -1,7 +1,7 @@
 <template>
   <section class="academic-section d-flex justify-center" :style="{ backgroundColor: $vuetify.theme.themes.dark.colors.primary }">
     <div class="academic-content d-flex align-center flex-column">
-      <p class="text-h4 font-weight-light">
+      <p class="text-h4 font-weight-light custom-title">
         {{ $t('educational') }}
       </p>
       <div
@@ -85,5 +85,21 @@ export default {
     }
 
   }
+
+@media (max-width: 430px) {
+  .academic-content {
+    .custom-title {
+      font-size: 25px!important;
+    }
+    .infos {
+      flex-direction: column;
+
+      .institution-box, .course-box, .date-box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
 }
 </style>

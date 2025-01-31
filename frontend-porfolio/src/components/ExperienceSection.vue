@@ -2,7 +2,7 @@
   <section class="experience-section d-flex justify-center" :style="{ backgroundColor: $vuetify.theme.themes.dark.colors.primary }">
     <div class="experience-content d-flex align-center flex-column">
       <div class="technologies-box d-flex align-center flex-column">
-        <p class="text-h4 font-weight-light">
+        <p class="text-h4 font-weight-light custom-title">
           {{ $t('technologies') }}
         </p>
 
@@ -42,16 +42,39 @@
         </div>
       </div>
       <div :style="{ backgroundColor: $vuetify.theme.themes.dark.colors.secondary}" class="jobs-box d-flex align-center flex-column">
-        <p class="text-h4 font-weight-light">
+        <p class="text-h4 font-weight-light custom-title">
           {{ $t('professional-experience') }}
         </p>
-        <div class="job-timeline">
+
+        <div v-if="isMobile">
+          <!-- Versão compacta para telas pequenas -->
+          <v-timeline side="end">
+            <v-timeline-item
+              v-for="job in jobs"
+              :key="job.title"
+              size="small"
+              :dot-color="job.isFinished ? 'grey' : 'orange'"
+            >
+              <v-alert
+                :color="job.isFinished ? 'grey' : 'orange'"
+                :icon="job.isFinished ? 'mdi-check-circle' : 'mdi-alert-circle-outline'"
+                :value="true"
+              >
+                <strong>{{ job.company }}</strong> - {{ job.title }}<br>
+                {{ job.startDate }} - {{ job.endDate || $t('present') }}<br>
+                {{ job.description }}
+              </v-alert>
+            </v-timeline-item>
+          </v-timeline>
+        </div>
+
+        <div v-else>
+          <!-- Versão original -->
           <v-timeline>
             <v-timeline-item
               v-for="job in jobs"
               :key="job.title"
               size="large"
-              class="timeline-item"
               align="start"
             >
               <template v-slot:icon>
@@ -80,6 +103,7 @@ export default {
   data() {
     return {
       iconsBoxVisible: false,
+      isMobile: false,
       rawJobs: [
         {
           company: 'YouX Group',
@@ -112,6 +136,10 @@ export default {
     }
   },
   mounted() {
+
+    this.checkViewport();
+    window.addEventListener('resize', this.checkViewport);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -122,6 +150,15 @@ export default {
     );
 
     observer.observe(this.$refs.iconsBox);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkViewport);
+  },
+  methods: {
+    checkViewport() {
+      console.log(window.innerWidth);
+      this.isMobile = window.innerWidth <= 430;
+    },
   }
 }
 </script>
@@ -184,6 +221,64 @@ export default {
       color: white; /* Ajusta o contraste do texto, se necessário */
     }
   }
+
+@media (max-width: 430px) {
+  .experience-content {
+    .technologies-box {
+      .custom-title{
+        font-size: 25px!important;
+      }
+      .icons-box {
+        flex-wrap: wrap;
+        gap: 12px; /* Reduz o espaço entre os ícones */
+        justify-content: center; /* Centraliza os ícones */
+        align-content: center;
+        .tech-icon {
+          width: 20%; /* Quatro ícones por linha */
+          text-align: center;
+          img {
+            width: 40px; /* Reduz o tamanho dos ícones */
+            height: 40px;
+          }
+          p {
+            font-size: 10px; /* Reduz o texto abaixo dos ícones */
+          }
+        }
+      }
+    }
+
+    .jobs-box {
+      padding: 15px; /* Reduz padding */
+
+      .custom-title{
+        font-size: 25px!important;
+        margin-bottom: 25px!important;
+        margin-top: 20px!important;
+      }
+
+      .job-timeline {
+        gap: 10px;
+
+        .timeline-item {
+          margin-bottom: 10px;
+          .timeline-card {
+            padding: 8px;
+            .v-card-title {
+              font-size: 12px; /* Reduz texto do título */
+            }
+            .v-card-text {
+              font-size: 10px; /* Reduz texto da descrição */
+            }
+          }
+        }
+
+        .v-avatar {
+          size: 35px; /* Diminui o tamanho do avatar */
+        }
+      }
+    }
+  }
+}
 }
 
 </style>

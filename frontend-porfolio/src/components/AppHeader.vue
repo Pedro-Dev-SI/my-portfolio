@@ -171,19 +171,19 @@
     flex-direction: row;
     min-height: 300px!important;
     h2 {
-      font-size: 20px!important; // Reduz ainda mais o tamanho do texto
+      font-size: 30px!important; // Reduz ainda mais o tamanho do texto
     }
     .custom-intro {
-      font-size: 15px!important; // Reduz ainda mais o tamanho do texto
+      font-size: 18px!important; // Reduz ainda mais o tamanho do texto
     }
     .custom-h5 {
-      font-size: 10px!important; // Reduz ainda mais o tamanho do texto
+      font-size: 12px!important; // Reduz ainda mais o tamanho do texto
     }
   }
 
   .photo-box {
-    height: 170px; // Reduz para telas muito pequenas
-    width: 120px;
+    height: 190px; // Reduz para telas muito pequenas
+    width: 140px;
     margin-top: 0;
   }
 

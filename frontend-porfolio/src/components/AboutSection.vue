@@ -82,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 .about-section {
   width: 100%;
-  min-height: 600px;
+  min-height: 100vh;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
