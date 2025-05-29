@@ -8,35 +8,35 @@
 
         <div class="icons-box d-flex align-center justify-space-between" ref="iconsBox" :class="{ 'animate-icons-box': iconsBoxVisible }">
           <div class="tech-icon text-body-1">
-            <img src="../assets/icons/HTML5.svg" alt="Teste" width="90" height="90">
+            <img src="../assets/icons/HTML5.svg" alt="HTML5 Icon" width="90" height="90">
             <p>HTML5</p>
           </div>
           <div class="tech-icon text-body-1">
-            <img src="../assets/icons/CSS3.svg" alt="Teste" width="90" height="90">
+            <img src="../assets/icons/CSS3.svg" alt="CSS3 Icon" width="90" height="90">
             <p>CSS3</p>
           </div>
-          <div class="tech-icon">
-            <img src="../assets/icons/JavaScript.svg" alt="Teste" width="90" height="90">
+          <div class="tech-icon text-body-1">
+            <img src="../assets/icons/JavaScript.svg" alt="JavaScript Icon" width="90" height="90">
             <p>JavaScript</p>
           </div>
-          <div class="tech-icon">
-            <img src="../assets/icons/Java.svg" alt="Teste" width="90" height="90">
+          <div class="tech-icon text-body-1">
+            <img src="../assets/icons/Java.svg" alt="Java Icon" width="90" height="90">
             <p>Java</p>
           </div>
-          <div class="tech-icon">
-            <img src="../assets/icons/Vue.js.svg" alt="Teste" width="90" height="90">
+          <div class="tech-icon text-body-1">
+            <img src="../assets/icons/Vue.js.svg" alt="Vue.js Icon" width="90" height="90">
             <p>Vue.js</p>
           </div>
-          <div class="tech-icon">
-            <img src="../assets/icons/React.svg" alt="Teste" width="90" height="90">
+          <div class="tech-icon text-body-1">
+            <img src="../assets/icons/React.svg" alt="React.js Icon" width="90" height="90">
             <p>React.js</p>
           </div>
-          <div class="tech-icon">
-            <img src="../assets/icons/Node.js.svg" alt="Teste" width="90" height="90">
+          <div class="tech-icon text-body-1">
+            <img src="../assets/icons/Node.js.svg" alt="Node.js Icon" width="90" height="90">
             <p>Node.js</p>
           </div>
-          <div class="tech-icon">
-            <img src="../assets/icons/SpringBoot.svg" alt="Teste" width="90" height="90">
+          <div class="tech-icon text-body-1">
+            <img src="../assets/icons/SpringBoot.svg" alt="Spring Boot Icon" width="90" height="90">
             <p>Spring</p>
           </div>
         </div>
