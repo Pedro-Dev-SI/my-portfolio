@@ -41,65 +41,17 @@
           </div>
         </div>
       </div>
-      <div :style="{ backgroundColor: $vuetify.theme.themes.dark.colors.secondary}" class="jobs-box d-flex align-center flex-column">
-        <p class="text-h4 font-weight-light custom-title">
-          {{ $t('professional-experience') }}
-        </p>
-
-        <div v-if="isMobile">
-          <!-- Versão compacta para telas pequenas -->
-          <v-timeline side="end">
-            <v-timeline-item
-              v-for="job in jobs"
-              :key="job.title"
-              size="small"
-              :dot-color="job.isFinished ? 'grey' : 'orange'"
-            >
-              <v-alert
-                :color="job.isFinished ? 'grey' : 'orange'"
-                :icon="job.isFinished ? 'mdi-check-circle' : 'mdi-alert-circle-outline'"
-                :value="true"
-              >
-                <strong>{{ job.company }}</strong> - {{ job.title }}<br>
-                {{ job.startDate }} - {{ job.endDate || $t('present') }}<br>
-                {{ job.description }}
-              </v-alert>
-            </v-timeline-item>
-          </v-timeline>
-        </div>
-
-        <div v-else>
-          <!-- Versão original -->
-          <v-timeline>
-            <v-timeline-item
-              v-for="job in jobs"
-              :key="job.title"
-              size="large"
-              align="start"
-            >
-              <template v-slot:icon>
-                <v-avatar :image="job.logoCompany" size="65"></v-avatar>
-              </template>
-              <template v-slot:opposite>
-                <span>{{ job.startDate }} - {{ job.endDate }}</span>
-              </template>
-              <v-card class="elevation-2 timeline-card" :class="{ 'unfinished-job': !job.isFinished }">
-                <v-card-title class="text-h5">
-                  <span class="font-weight-light">{{ job.company }}</span> - {{ job.title }}
-                </v-card-title>
-                <v-card-text>{{ job.description }}</v-card-text>
-              </v-card>
-            </v-timeline-item>
-          </v-timeline>
-        </div>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
+import ProjectsSection from './ProjectsSection.vue';
 
 export default {
+  components: {
+    ProjectsSection
+  },
   data() {
     return {
       iconsBoxVisible: false,
@@ -196,9 +148,9 @@ export default {
     }
 
     .jobs-box {
-      margin-top: 100px;
+      margin-top: 40px;
       width: 100%;
-      padding: 50px;
+      padding: 24px;
 
       .job-timeline {
         display: flex;
@@ -212,13 +164,17 @@ export default {
 
         .timeline-card {
           padding: 10px;
+          max-width: 600px;
+          margin: 0 auto;
+          border-radius: 16px;
         }
       }
     }
 
     .unfinished-job {
       background-color: #F8971F !important;
-      color: white; /* Ajusta o contraste do texto, se necessário */
+      color: white;
+      border-radius: 16px;
     }
   }
 
@@ -248,7 +204,7 @@ export default {
     }
 
     .jobs-box {
-      padding: 15px; /* Reduz padding */
+      padding: 10px; /* Reduz padding */
 
       .custom-title{
         font-size: 25px!important;
@@ -263,6 +219,8 @@ export default {
           margin-bottom: 10px;
           .timeline-card {
             padding: 8px;
+            max-width: 100vw;
+            border-radius: 12px;
             .v-card-title {
               font-size: 12px; /* Reduz texto do título */
             }
