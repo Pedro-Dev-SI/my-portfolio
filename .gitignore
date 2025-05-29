@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+experiences.txt
 
 # local env files
 .env.local

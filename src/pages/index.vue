@@ -12,6 +12,7 @@
     <!-- Conteúdo Principal -->
     <AboutSection />
     <ExperienceSection />
+    <ProjectsSection />
     <AcademicSection />
     <ContactSection />
   </div>

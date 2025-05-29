@@ -27,6 +27,9 @@
     "name": "Seu nome",
     "email": "Seu e-mail",
     "message": "Mensagem",
-    "present": "Presente"
+    "present": "Presente",
+    "projects": "PROJETOS",
+    "project-1-title": "AssinaturiAI Hub",
+    "project-1-description": "Este projeto é um sistema completo de gerenciamento de assinaturas, membros e planos."
 }
   
