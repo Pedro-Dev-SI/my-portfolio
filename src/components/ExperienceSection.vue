@@ -46,12 +46,8 @@
 </template>
 
 <script>
-import ProjectsSection from './ProjectsSection.vue';
 
 export default {
-  components: {
-    ProjectsSection
-  },
   data() {
     return {
       iconsBoxVisible: false,
